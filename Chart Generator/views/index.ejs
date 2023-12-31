@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chart Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+
+<body>
+  
+
+  <main> 
+  <div id="formSection">
+    <h1>
+      <!-- symbol inserted from google fonts page -->
+      <span class="material-symbols-outlined">
+        bar_chart_4_bars
+      </span>   Chart Generator</h1>
+    <form action="/" id="form" class="form" method="POST">
+      <label for="type">Choose the chart type:</label><br>
+      <select name="type" class="form-select">
+        <option value="" data-display="Select"></option>
+        <option value="bar">Bar chart</option>
+        <option value="line">Line Graph</option>
+        <option value="pie">Pie Chart</option>
+        <option value="doughnut">Doughnut Chart</option>
+        <option value="progressBar">Progress Bar</option>
+      </select>
+        <br><br><br>
+
+      <label for="label">Enter the chart labels:</label><br>
+      <br>
+      <label for="label1">Label #1</label><br>
+      <input type="text" id="label1" name="label1"><br>
+      <label for="label2">Label #2</label><br>
+      <input type="text" id="label2" name="label2"><br>
+      <label for="label3">Label #3</label><br>
+      <input type="text" id="label3" name="label3"><br>
+      <label for="label4">Label #4</label><br>
+      <input type="text" id="label4" name="label4"><br>
+      <label for="label5">Label #5</label><br>
+      <input type="text" id="label5" name="label5"><br>
+      <br><br>
+      <label for="label">Provide datasets information:</label><br>
+      <br>
+      <label for="datasetlabel1">Label #1</label><br>
+      <input type="text" id="datasetlabel1" name="datasetlabel1"><br>
+      <label for="datasetdata1">Data #1</label><br>
+      <input type="text" id="datasetdata1" name="datasetdata1"><br>
+      <label for="datasetdata2">Data #2</label><br>
+      <input type="text" id="datasetdata2" name="datasetdata2"><br>
+      <label for="datasetdata3">Data #3</label><br>
+      <input type="text" id="datasetdata3" name="datasetdata3"><br>
+      <label for="datasetdata4">Data #4</label><br>
+      <input type="text" id="datasetdata4" name="datasetdata4"><br>
+      <label for="datasetdata5">Data #5</label><br>
+      <input type="text" id="datasetdata5" name="datasetdata5"><br>
+      <br>
+      <label for="datasetlabel2">Label #2</label><br>
+      <input type="text" id="datasetlabel2" name="datasetlabel2"><br>
+      <label for="datasetdata2_1">Data #1</label><br>
+      <input type="text" id="datasetdata2_1" name="datasetdata2_1"><br>
+      <label for="datasetdata2_2">Data #2</label><br>
+      <input type="text" id="datasetdata2_2" name="datasetdata2_2"><br>
+      <label for="datasetdata2_3">Data #3</label><br>
+      <input type="text" id="datasetdata2_3" name="datasetdata2_3"><br>
+      <label for="datasetdata2_4">Data #4</label><br>
+      <input type="text" id="datasetdata2_4" name="datasetdata2_4"><br>
+      <label for="datasetdata5">Data #5</label><br>
+      <input type="text" id="datasetdata2_5" name="datasetdata2_5"><br>
+  
+      <br>
+      <input type="submit" class="form-submit" value="Generate"></button>
+    </form>
+  </div>
+
+  
+<!-- if data exists, means if chart is generated render this element -->
+  <% if(locals.data){ %>
+  <div id="chartSection">
+    <!-- source is generted chart from API adress -->
+    <img src="<%= data %>" alt="Chart">
+  </div>
+  <%}%>
+
+  </main>
+  
+</body>
+
+</html>
